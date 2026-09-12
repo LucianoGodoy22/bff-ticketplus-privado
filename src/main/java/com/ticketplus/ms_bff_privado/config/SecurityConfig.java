@@ -49,11 +49,14 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(List.of(
             "http://localhost:5173",
             "http://localhost:5174",
-            "https://LucianoGodoy22.github.io",
-            "https://ivsantander-dot.github.io" // Reemplaza por tu usuario real de GitHub
+            "https://lucianogodoy22.github.io", // Todo en minúsculas
+            "https://ivsantander-dot.github.io"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+        
+        // Usar "*" permite que pasen todas las cabeceras requeridas por MSAL, Axios y el navegador
+        configuration.setAllowedHeaders(List.of("*")); 
+        
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
