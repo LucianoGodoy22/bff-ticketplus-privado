@@ -36,7 +36,7 @@ public class BffAdminEventoController {
     }
 
     // POST: Exige estrictamente el rol ADMIN
-    @PostMapping
+    @PostMapping("/crear")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Object> crearEvento(@RequestBody Object evento) {
         Object response = restClient.post()

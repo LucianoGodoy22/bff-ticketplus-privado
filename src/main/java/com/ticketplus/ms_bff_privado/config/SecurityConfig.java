@@ -49,7 +49,7 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(List.of(
             "http://localhost:5173",
             "http://localhost:5174",
-            "https://lucianogodoy22.github.io", // Todo en minúsculas
+            "https://lucianogodoy22.github.io", 
             "https://ivsantander-dot.github.io"
         ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
